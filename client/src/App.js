@@ -28,7 +28,7 @@ class App extends Component {
   };
   
   render() {
-    if (!this.state.web3 && !this.state.accounts) {
+    if (!this.state.web3 || !this.state.accounts) {
       return <div>Loading Web3, accounts, and contract...</div>;
     }else{
       return (

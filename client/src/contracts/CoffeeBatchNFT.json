@@ -4276,9 +4276,16 @@
     "name": "solc",
     "version": "0.5.8+commit.23d335f2.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "1562539803974": {
+      "events": {},
+      "links": {},
+      "address": "0xFd1f9b0c01fa8508e8Fc5d87F1141eb92498c024",
+      "transactionHash": "0x8bc2b6b2901c5b44e640e9501085aeb22f9972d7bfe725559bc0fabe8c732fd4"
+    }
+  },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-07-07T22:50:31.448Z",
+  "updatedAt": "2019-07-07T22:59:18.667Z",
   "devdoc": {
     "methods": {
       "approve(address,uint256)": {
