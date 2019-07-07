@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import SimpleStorageContract from "./contracts/SimpleStorage.json";
 import getWeb3 from "./utils/getWeb3";
 import CoffeeBatchNFT from "./contractAdapters/CoffeeBatchNFT"
+
 import "./App.css";
 
 class App extends Component {
@@ -27,23 +27,8 @@ class App extends Component {
     }
   };
   
-  runExample = async () => {
-    const { accounts, contract } = this.state;
-
-    // Stores a given value, 5 by default.
-    await contract.methods.set(5).send({ from: accounts[0] });
-
-    // Get the value from the contract to prove it worked.
-    const response = await contract.methods.get().call();
-
-    // Update state with the result.
-    this.setState({ storageValue: response });
-  };
-
- 
-
   render() {
-    if (!this.state.web3) {
+    if (!this.state.web3 && !this.state.accounts) {
       return <div>Loading Web3, accounts, and contract...</div>;
     }else{
       return (
