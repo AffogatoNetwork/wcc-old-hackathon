@@ -29,12 +29,16 @@ contract CoffeeTokenHandler is Ownable, ERC721Holder{
     function setERC20TokenContract(address _ERC20TokenContract) public onlyOwner {
         ERC20TokenContract = _ERC20TokenContract;
     }
-    
+
     function addCooperative(address cooperative) public onlyOwner{
         isCooperative[cooperative] = true;
     }
 
     function removeCooperative(address cooperative) public onlyOwner {
         isCooperative[cooperative] = false;
+    }
+
+    function wrapCoffee(address _from, uint256 _tokenId) public onlyCooperative(){
+        NFTTokenContractAddress.transferFrom(_from, this, _tokenId);
     }
 }
