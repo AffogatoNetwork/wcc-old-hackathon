@@ -4,7 +4,7 @@ import 'openzeppelin-solidity/contracts/token/ERC721/ERC721Full.sol';
 import 'openzeppelin-solidity/contracts/token/ERC721/ERC721Mintable.sol';
 import 'openzeppelin-solidity/contracts/drafts/Counters.sol';
 
-contract SwagNFT is ERC721Full, ERC721Mintable{
+contract CoffeeBatchNFT is ERC721Full, ERC721Mintable{
 
     using Counters for Counters.Counter;
     Counters.Counter private coffeeId;

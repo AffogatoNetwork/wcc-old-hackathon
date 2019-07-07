@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ContractForm extends Component {
+class AddCoffeeBatchForm extends Component {
     constructor(props) {
         super(props);
         this.state = {tokenAmt: ''};
@@ -32,4 +32,4 @@ class ContractForm extends Component {
       }
 }
 
-export default ContractForm;
+export default AddCoffeeBatchForm;
