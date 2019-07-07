@@ -14,9 +14,7 @@ contract SwagNFT is ERC721Full, ERC721Mintable{
         string memory _symbol
     )
         ERC721Full(_name, _symbol)
-        public
-    {
-
+        public {
     }
 
      function createCoffeeBatch(
