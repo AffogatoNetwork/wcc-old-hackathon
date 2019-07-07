@@ -38,7 +38,7 @@ contract CoffeeTokenHandler is Ownable, ERC721Holder{
         isCooperative[cooperative] = false;
     }
 
-    // function wrapCoffee(address _from, uint256 _tokenId) public onlyCooperative(){
-    //     NFTTokenContractAddress.transferFrom(_from, this, _tokenId);
-    // }
+    function wrapCoffee(address _from, uint256 _tokenId) public onlyCooperative(){
+       CoffeeBatchNFT(NFTTokenContractAddress).transferFrom(_from, address(this), _tokenId);
+    }
 }
