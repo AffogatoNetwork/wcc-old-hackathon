@@ -1,40 +1,32 @@
 import React, { Component } from "react";
 import SimpleStorageContract from "./contracts/SimpleStorage.json";
 import getWeb3 from "./utils/getWeb3";
-import ContractForm from "./components/ContractForm"
+import CoffeeBatchNFT from "./contractAdapters/CoffeeBatchNFT"
 import "./App.css";
 
 class App extends Component {
   state = { allTokens: 0, storageValue: 0, web3: null, accounts: null, contract: null };
-
   componentDidMount = async () => {
     try {
       // Get network provider and web3 instance.
       const web3 = await getWeb3();
-
       // Use web3 to get the user's accounts.
       const accounts = await web3.eth.getAccounts();
-
-      // Get the contract instance.
-      const networkId = await web3.eth.net.getId();
-      const deployedNetwork = SimpleStorageContract.networks[networkId];
-      const instance = new web3.eth.Contract(
-        SimpleStorageContract.abi,
-        deployedNetwork && deployedNetwork.address,
-      );
-
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
-      this.setState({ web3, accounts, contract: instance });
+      this.setState({
+        web3,
+        accounts
+      });
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(
-        `Failed to load web3, accounts, or contract. Check console for details.`,
+        `Failed to load web3, accounts, or contract. Check console for details.`
       );
       console.error(error);
     }
   };
-
+  
   runExample = async () => {
     const { accounts, contract } = this.state;
 
@@ -48,24 +40,20 @@ class App extends Component {
     this.setState({ storageValue: response });
   };
 
-  mintTokens = async (tokenAmt) => {
-    const {contract} = this.state;
-    await contract.methods.mintTokens(tokenAmt);
-    const response = await contract.methods.mintTokens().call();
-    this.setState({ allTokens: tokenAmt });
-  }
+ 
 
   render() {
     if (!this.state.web3) {
       return <div>Loading Web3, accounts, and contract...</div>;
+    }else{
+      return (
+        <div className="App">
+          <h1>Wrapped Coffee coins</h1>
+          <CoffeeBatchNFT web3= {this.state.web3} accounts= {this.state.accounts}/>
+        </div>
+      );
     }
-    return (
-      <div className="App">
-        <h1>Wrapped Coffee coins</h1>
-        <ContractForm onTokenMint = {this.mintTokens}/>
-        <button onClick={()=>this.runExample()}>run example?</button>
-      </div>
-    );
+    
   }
 }
 
