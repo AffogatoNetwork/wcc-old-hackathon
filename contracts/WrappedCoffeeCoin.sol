@@ -12,8 +12,9 @@ contract WrappedCoffeeCoin is ERC20Mintable, ERC20Detailed, Ownable {
         require(msg.sender == CoffeeTokenHolderAddress, "caller must be holder contract");
         _;
     }
-    constructor() Ownable() ERC20Detailed("Wrapped Coffee", "WCC", 0) public {
-        // _mint(msg.sender);
+
+    constructor(address _CoffeeTokenHolderAddress) Ownable() ERC20Detailed("Wrapped Coffee", "WCC", 0) public {
+        CoffeeTokenHolderAddress = _CoffeeTokenHolderAddress;
     }
 
     function wrapCoffee(address _owner, uint _amount) public onlyCoffeeHolder {
