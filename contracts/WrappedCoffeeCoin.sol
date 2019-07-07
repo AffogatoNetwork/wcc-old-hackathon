@@ -6,30 +6,21 @@ import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
 contract WrappedCoffeeCoin is ERC20Mintable, ERC20Detailed, Ownable {
 
-    mapping(address => bool) public isCooperative;
+    address public CoffeeTokenHolderAddress;
 
-    modifier onlyCooperative(){
-        require(isCooperative[msg.sender], "user must be a cooperative");
+    modifier onlyCoffeeHolder(){
+        require(msg.sender == CoffeeTokenHolderAddress, "caller must be holder contract");
         _;
     }
-
     constructor() Ownable() ERC20Detailed("Wrapped Coffee", "WCC", 0) public {
         // _mint(msg.sender);
     }
 
-    function addCooperative(address cooperative) public onlyOwner{
-        isCooperative[cooperative] = true;
-    }
-
-    function removeCooperative(address cooperative) public onlyOwner {
-        isCooperative[cooperative] = false;
-    }
-
-    function wrapCoffee(address _owner, uint _amount) public onlyCooperative {
+    function wrapCoffee(address _owner, uint _amount) public onlyCoffeeHolder {
         _mint(_owner, _amount);
     }
 
-    function unwrapCoffee(address _owner, uint _amount) public onlyCooperative {
+    function unwrapCoffee(address _owner, uint _amount) public onlyCoffeeHolder {
          _burn(_owner, _amount);
     }
 }

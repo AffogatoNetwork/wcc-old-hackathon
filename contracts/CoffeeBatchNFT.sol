@@ -8,6 +8,7 @@ contract CoffeeBatchNFT is ERC721Full, ERC721Mintable{
 
     using Counters for Counters.Counter;
     Counters.Counter private coffeeId;
+    mapping(uint => uint) public coffeeBatchSize;
 
     constructor(
         string memory _name,
@@ -18,15 +19,16 @@ contract CoffeeBatchNFT is ERC721Full, ERC721Mintable{
     }
 
      function createCoffeeBatch(
-        string memory tokenURI
+        string memory _tokenURI,
+        uint _size
     )
         public
         returns (bool)
     {
         coffeeId.increment();
+        coffeeBatchSize[coffeeId.current()] = _size;
         _mint(msg.sender, coffeeId.current());
-        _setTokenURI(coffeeId.current(), tokenURI);
+        _setTokenURI(coffeeId.current(), _tokenURI);
         return true;
     }
-
 }
