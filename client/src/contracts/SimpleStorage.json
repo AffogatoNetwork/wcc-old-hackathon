@@ -30,6 +30,7 @@
       "type": "function"
     }
   ],
+<<<<<<< HEAD
   "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"x\",\"type\":\"uint256\"}],\"name\":\"set\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"get\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/isaacmtz90/Documents/hackMunon/wrapped-coffee-coin/contracts/SimpleStorage.sol\":\"SimpleStorage\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/isaacmtz90/Documents/hackMunon/wrapped-coffee-coin/contracts/SimpleStorage.sol\":{\"keccak256\":\"0x27a650f3e92e6057b3f1239be6fc335fb57d75c570d7274d8902eb0b04e48014\",\"urls\":[\"bzzr://72f63578772843cf2f8ae2bce4a69c027cbfe7f3e04cc4af14ca023bdc3c35c2\"]}},\"version\":1}",
   "bytecode": "0x608060405234801561001057600080fd5b5060bd8061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146062575b600080fd5b606060048036036020811015604b57600080fd5b8101908080359060200190929190505050607e565b005b60686088565b6040518082815260200191505060405180910390f35b8060008190555050565b6000805490509056fea165627a7a7230582051959fd42073026821a8e7c00c292ea14d3ae26e41cb8111f40eb2fc3fd7dfb60029",
   "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146062575b600080fd5b606060048036036020811015604b57600080fd5b8101908080359060200190929190505050607e565b005b60686088565b6040518082815260200191505060405180910390f35b8060008190555050565b6000805490509056fea165627a7a7230582051959fd42073026821a8e7c00c292ea14d3ae26e41cb8111f40eb2fc3fd7dfb60029",
@@ -39,6 +40,17 @@
   "sourcePath": "/home/isaacmtz90/Documents/hackMunon/wrapped-coffee-coin/contracts/SimpleStorage.sol",
   "ast": {
     "absolutePath": "/home/isaacmtz90/Documents/hackMunon/wrapped-coffee-coin/contracts/SimpleStorage.sol",
+=======
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"x\",\"type\":\"uint256\"}],\"name\":\"set\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"get\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/crisgarner/projects/hackathons/wrapped-coffee-coin/contracts/SimpleStorage.sol\":\"SimpleStorage\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/crisgarner/projects/hackathons/wrapped-coffee-coin/contracts/SimpleStorage.sol\":{\"keccak256\":\"0x27a650f3e92e6057b3f1239be6fc335fb57d75c570d7274d8902eb0b04e48014\",\"urls\":[\"bzzr://72f63578772843cf2f8ae2bce4a69c027cbfe7f3e04cc4af14ca023bdc3c35c2\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060bd8061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146062575b600080fd5b606060048036036020811015604b57600080fd5b8101908080359060200190929190505050607e565b005b60686088565b6040518082815260200191505060405180910390f35b8060008190555050565b6000805490509056fea165627a7a72305820a196266cf4cd510843373dd9885b05188c0f07bec1dbaa6608ba6647815f318a0029",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146062575b600080fd5b606060048036036020811015604b57600080fd5b8101908080359060200190929190505050607e565b005b60686088565b6040518082815260200191505060405180910390f35b8060008190555050565b6000805490509056fea165627a7a72305820a196266cf4cd510843373dd9885b05188c0f07bec1dbaa6608ba6647815f318a0029",
+  "sourceMap": "25:176:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:176:1;;;;;;;",
+  "deployedSourceMap": "25:176:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:176:1;;;;;;;;;;;;;;;;;;;;;;;;72:53;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;72:53:1;;;;;;;;;;;;;;;;;:::i;:::-;;129:70;;;:::i;:::-;;;;;;;;;;;;;;;;;;;72:53;119:1;106:10;:14;;;;72:53;:::o;129:70::-;165:4;184:10;;177:17;;129:70;:::o",
+  "source": "pragma solidity ^0.5.0;\n\ncontract SimpleStorage {\n  uint storedData;\n\n  function set(uint x) public {\n    storedData = x;\n  }\n\n  function get() public view returns (uint) {\n    return storedData;\n  }\n}\n",
+  "sourcePath": "/home/crisgarner/projects/hackathons/wrapped-coffee-coin/contracts/SimpleStorage.sol",
+  "ast": {
+    "absolutePath": "/home/crisgarner/projects/hackathons/wrapped-coffee-coin/contracts/SimpleStorage.sol",
+>>>>>>> b3aa28356ac5022fe98e9f2acafae0b62859ff96
     "exportedSymbols": {
       "SimpleStorage": [
         79
@@ -290,7 +302,11 @@
     "src": "0:202:1"
   },
   "legacyAST": {
+<<<<<<< HEAD
     "absolutePath": "/home/isaacmtz90/Documents/hackMunon/wrapped-coffee-coin/contracts/SimpleStorage.sol",
+=======
+    "absolutePath": "/home/crisgarner/projects/hackathons/wrapped-coffee-coin/contracts/SimpleStorage.sol",
+>>>>>>> b3aa28356ac5022fe98e9f2acafae0b62859ff96
     "exportedSymbols": {
       "SimpleStorage": [
         79
@@ -546,6 +562,7 @@
     "version": "0.5.8+commit.23d335f2.Emscripten.clang"
   },
   "networks": {
+<<<<<<< HEAD
     "1562520182574": {
       "events": {},
       "links": {},
@@ -555,6 +572,17 @@
   },
   "schemaVersion": "3.0.11",
   "updatedAt": "2019-07-07T17:28:29.517Z",
+=======
+    "1562520560932": {
+      "events": {},
+      "links": {},
+      "address": "0x8B155732A188cB15b32516b10b1d03D7681F20Ea",
+      "transactionHash": "0x86cecbdf13b42609b9ed1f9f6ab78c56d9684fef59b1f2b320a8741ef5da1964"
+    }
+  },
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2019-07-07T17:29:25.882Z",
+>>>>>>> b3aa28356ac5022fe98e9f2acafae0b62859ff96
   "devdoc": {
     "methods": {}
   },
