@@ -43,8 +43,7 @@ contract CoffeeBatchNFT is ERC721Full, ERC721Mintable{
             uint256 totalCoffee = totalSupply();
             uint256 resultIndex = 0;
 
-            // We count on the fact that all Swag have IDs starting at 1 and increasing
-            // sequentially up to the totalCat count.
+            // We count on the fact that all Coffees have IDs starting at 1 and increasing
             uint256 coffeeIterator;
 
             for (coffeeIterator = 1; coffeeIterator <= totalCoffee; coffeeIterator++) {
