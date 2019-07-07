@@ -2256,10 +2256,16 @@
       "links": {},
       "address": "0x0b1122008F08dE3EF8Af591DAb14f6cdFC2969cA",
       "transactionHash": "0x3b90bea56b8808f98ab30a0143540b436de5fc6f2ac9c81ae63ff048d7e3b839"
+    },
+    "1562543552799": {
+      "events": {},
+      "links": {},
+      "address": "0xe079420BfE002F1544Fe733BE7C6a6e40aFFbe70",
+      "transactionHash": "0xfab6e92361e56d526ae4a708b99d4dc60bad49cb2fd8b1d705b16919b699caba"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-07-07T23:18:35.914Z",
+  "updatedAt": "2019-07-07T23:52:40.832Z",
   "devdoc": {
     "methods": {
       "allowance(address,address)": {
