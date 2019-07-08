@@ -24,7 +24,7 @@ contract CoffeeTokenHandler is Ownable, ERC721Holder{
     function setNFTTokenContractAddress(address _NFTTokenContractAddress) public onlyOwner {
         NFTTokenContractAddress = _NFTTokenContractAddress;
     }
-
+    //First action, set address of contract
     function setERC20TokenContract(address _ERC20TokenContract) public onlyOwner {
         ERC20TokenContract = _ERC20TokenContract;
     }
