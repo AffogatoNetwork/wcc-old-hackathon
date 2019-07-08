@@ -489,7 +489,7 @@
   "source": "pragma solidity ^0.5.0;\n\nimport \"openzeppelin-solidity/contracts/token/ERC20/ERC20Detailed.sol\";\nimport \"openzeppelin-solidity/contracts/token/ERC20/ERC20Mintable.sol\";\nimport \"openzeppelin-solidity/contracts/ownership/Ownable.sol\";\n\ncontract WrappedCoffeeCoin is ERC20Mintable, ERC20Detailed, Ownable {\n\n    address public CoffeeTokenHolderAddress;\n\n    modifier onlyCoffeeHolder(){\n        require(msg.sender == CoffeeTokenHolderAddress, \"caller must be holder contract\");\n        _;\n    }\n\n    constructor(address _CoffeeTokenHolderAddress) Ownable() ERC20Detailed(\"Wrapped Coffee\", \"WCC\", 0) public {\n        CoffeeTokenHolderAddress = _CoffeeTokenHolderAddress;\n    }\n\n    function wrapCoffee(address _owner, uint _amount) public onlyCoffeeHolder {\n        _mint(_owner, _amount);\n    }\n\n    function unwrapCoffee(address _owner, uint _amount) public onlyCoffeeHolder {\n         _burn(_owner, _amount);\n    }\n}",
   "sourcePath": "/home/crisgarner/projects/hackathons/wrapped-coffee-coin/contracts/WrappedCoffeeCoin.sol",
   "ast": {
-    "absolutePath": "/home/crisgarner/projects/hackathons/wrapped-coffee-coin/contracts/WrappedCoffeeCoin.sol",
+    "absolutePath": "/home/isaacmtz90/Documents/hackMunon/wrapped-coffee-coin/contracts/WrappedCoffeeCoin.sol",
     "exportedSymbols": {
       "WrappedCoffeeCoin": [
         392
@@ -1368,7 +1368,7 @@
     "src": "0:915:3"
   },
   "legacyAST": {
-    "absolutePath": "/home/crisgarner/projects/hackathons/wrapped-coffee-coin/contracts/WrappedCoffeeCoin.sol",
+    "absolutePath": "/home/isaacmtz90/Documents/hackMunon/wrapped-coffee-coin/contracts/WrappedCoffeeCoin.sol",
     "exportedSymbols": {
       "WrappedCoffeeCoin": [
         392

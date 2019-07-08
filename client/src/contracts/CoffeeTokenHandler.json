@@ -232,46 +232,6 @@
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "_from",
-          "type": "address"
-        },
-        {
-          "name": "_tokenId",
-          "type": "uint256"
-        }
-      ],
-      "name": "wrapCoffee",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "_from",
-          "type": "address"
-        },
-        {
-          "name": "_tokenId",
-          "type": "uint256"
-        },
-        {
-          "name": "_amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "unwrapCoffee",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"\",\"type\":\"address\"},{\"name\":\"\",\"type\":\"address\"},{\"name\":\"\",\"type\":\"uint256\"},{\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"onERC721Received\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes4\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_ERC20TokenContract\",\"type\":\"address\"}],\"name\":\"setERC20TokenContract\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"coffeeBatches\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"NFTTokenContractAddress\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"cooperative\",\"type\":\"address\"}],\"name\":\"removeCooperative\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_from\",\"type\":\"address\"},{\"name\":\"_tokenId\",\"type\":\"uint256\"},{\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"unwrapCoffee\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"ERC20TokenContract\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_NFTTokenContractAddress\",\"type\":\"address\"}],\"name\":\"setNFTTokenContractAddress\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_from\",\"type\":\"address\"},{\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"wrapCoffee\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"isCooperative\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"cooperative\",\"type\":\"address\"}],\"name\":\"addCooperative\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_NFTTokenContractAddress\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{\"isOwner()\":{\"details\":\"Returns true if the caller is the current owner.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * > Note: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/crisgarner/projects/hackathons/wrapped-coffee-coin/contracts/CoffeeTokenHandler.sol\":\"CoffeeTokenHandler\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/crisgarner/projects/hackathons/wrapped-coffee-coin/contracts/CoffeeBatchNFT.sol\":{\"keccak256\":\"0x6d8565640c7f8702d6e0c465144b79d5f1b3cdbc6b89a93237656b42debe7f3a\",\"urls\":[\"bzzr://951e7400316ce0aa501eb6f7fde9a3c37d504022064e7899d5dfb05df4181997\"]},\"/home/crisgarner/projects/hackathons/wrapped-coffee-coin/contracts/CoffeeTokenHandler.sol\":{\"keccak256\":\"0x6878a75eae6c60d866cd31e03bf28e60c5e10259fe6caec347cd0e88771525cd\",\"urls\":[\"bzzr://514b55902a386d30a52e76921952a2acc8c338c3a9c85820342c4add343f1100\"]},\"/home/crisgarner/projects/hackathons/wrapped-coffee-coin/contracts/WrappedCoffeeCoin.sol\":{\"keccak256\":\"0xc8580376f4c9cce61d71698d778d89f42b997759e1c63c358f81a7fefba8f25c\",\"urls\":[\"bzzr://a921d8b2b570dcbd55241f557acaf22e07dda1afcbecca4f80a23b29dba348b8\"]},\"openzeppelin-solidity/contracts/access/Roles.sol\":{\"keccak256\":\"0xb002c378d7b82a101bd659c341518953ca0919d342c0a400196982c0e7e7bcdb\",\"urls\":[\"bzzr://bd34c1ce05b5b2b3a62fc02e160f6805b1cadd476854664f433c685b2fda8dad\"]},\"openzeppelin-solidity/contracts/access/roles/MinterRole.sol\":{\"keccak256\":\"0x63da54a7a5d4e4d82ac8d1f4f7f995fd8ef2b5fe1f2960b83e534fa37fb60910\",\"urls\":[\"bzzr://cea53b805426e40efadb24f2613aca39182462e9ecd23fde7aacf0c4b5885aaf\"]},\"openzeppelin-solidity/contracts/drafts/Counters.sol\":{\"keccak256\":\"0x5eb69360d3441ab2ee799bd7c007cccbffb0896f12b2dfe1456193e2aa180a11\",\"urls\":[\"bzzr://ecd0352164978c418c8f5b0080c972b65e4b07f6afc593fb7cdd856185a458ea\"]},\"openzeppelin-solidity/contracts/introspection/ERC165.sol\":{\"keccak256\":\"0xac2eacd7e7762e275442f28f21d821544df5aae2ed7698af13be8c41b7005e2e\",\"urls\":[\"bzzr://43e901f6f210568ebc1d3591da3ce6a9d10796b854767a9c6e3da10305a8a332\"]},\"openzeppelin-solidity/contracts/introspection/IERC165.sol\":{\"keccak256\":\"0x661553e43d7c4fbb2de504e5999fd5c104d367488350ed5bf023031bd1ba5ac5\",\"urls\":[\"bzzr://fc2ba15143ce3a00268ecd15fc98eb2469b18bfe27a64bbab0ac6446f161c739\"]},\"openzeppelin-solidity/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x4ccf2d7b51873db1ccfd54ca2adae5eac3b184f9699911ed4490438419f1c690\",\"urls\":[\"bzzr://1604f5b6d6e916c154efd8c6720cda069e5ba32dfa0a9dedf2b42e5b02d07f89\"]},\"openzeppelin-solidity/contracts/ownership/Ownable.sol\":{\"keccak256\":\"0xf79fb10e8235770eb4aea7249034076a3cc9f9119ad944fc48705bae9c9d20dc\",\"urls\":[\"bzzr://d12a11272051eb6586de8f7e0a82c04a98c9984ce8b2a6cf1ee439f65aba29a9\"]},\"openzeppelin-solidity/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0x852793a3c2f86d336a683b30d688ec3dcfc57451af5a2bf5975cda3b7191a901\",\"urls\":[\"bzzr://07fb42206812a17c1f71e548cfa5cec6f9aa1ae0ca5df870718ca4aa9759d1a5\"]},\"openzeppelin-solidity/contracts/token/ERC20/ERC20Detailed.sol\":{\"keccak256\":\"0xc61b3603089b09a730d8ca72e9133a496cc4405da40e9b87c12f073245d774bf\",\"urls\":[\"bzzr://f280f38d5ab6e1b89fd898ccd3901054a56572c141d91d30302e2db1db4cc6ff\"]},\"openzeppelin-solidity/contracts/token/ERC20/ERC20Mintable.sol\":{\"keccak256\":\"0x6df8d686813b2875e99928ecd07bf8ee6d7473bc6a95eb1190e8fdba86beda76\",\"urls\":[\"bzzr://b4a3a1136392be8723a0d9627d1626323e3891c98e88ca5ab48da1dada375580\"]},\"openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x90e8c2521653bbb1768b05889c5760031e688d9cd361f167489b89215e201b95\",\"urls\":[\"bzzr://aa8b45b57edafc3d67bc5d916327ea16807fae33f753ca163ae0c4061b789766\"]},\"openzeppelin-solidity/contracts/token/ERC721/ERC721.sol\":{\"keccak256\":\"0xf151df411bbf4eaef1fc8e8480cd10c2cd985f1a36517e63981517610213efc1\",\"urls\":[\"bzzr://9bca20c0c1208be8f31fc7a73faccd2fca4c5f84dc0a432ae2e066970551db34\"]},\"openzeppelin-solidity/contracts/token/ERC721/ERC721Enumerable.sol\":{\"keccak256\":\"0xb42cb5a7471d98114af8f7050e7d08dfd543f432713a8aee72a45ce9485f5bed\",\"urls\":[\"bzzr://b0d4d8eb319d67dc4b5def23d48a84806dcd6492782c176309da449903e58766\"]},\"openzeppelin-solidity/contracts/token/ERC721/ERC721Full.sol\":{\"keccak256\":\"0x908d0d6fd8d30cffb1fe9fce1f7db6802cb885fbe88d2f170539e8dcc6afa946\",\"urls\":[\"bzzr://691f4df66b5aa95410d8205f7afcd90e5f066d13513392ab797b2c9ce2f4f669\"]},\"openzeppelin-solidity/contracts/token/ERC721/ERC721Holder.sol\":{\"keccak256\":\"0xb2b0c5d6c6d25af576c67ab17c17b60dc98510a9869689b0d077fa69922c3c67\",\"urls\":[\"bzzr://ed6c4b26be5b0348408f029af7fcc77be438535fa0cd7489c97574fda3ab293f\"]},\"openzeppelin-solidity/contracts/token/ERC721/ERC721Metadata.sol\":{\"keccak256\":\"0xe5e28b1a405164faa98f8ecd8ed2b00907b89e3d58b2b2bb8ac8b12bc5714489\",\"urls\":[\"bzzr://5a804c3710e9eca0a111db4536b0c5d23bf4a66734a9856f3df2992900ed8f28\"]},\"openzeppelin-solidity/contracts/token/ERC721/ERC721Mintable.sol\":{\"keccak256\":\"0x4c77825e3ce795c18c96af2985f702eff03dc660b25026b2754d90b64058f6ab\",\"urls\":[\"bzzr://3e8f76912935d64c6cf6b3209cb81858c3abea8b91fca68a7bfd1a005fdefd42\"]},\"openzeppelin-solidity/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0xce48937a8007c580b8e2e35705738c922dd17540de89ebee6df06d2917a3f9fc\",\"urls\":[\"bzzr://de494d3843e2c151aa108782382720b5d9f4531f0aa620a4244ca12fc1f8a780\"]},\"openzeppelin-solidity/contracts/token/ERC721/IERC721Enumerable.sol\":{\"keccak256\":\"0x5c573acd6c7b98d71f3c1c44d63dc17400b0fd7b26a52c9fded43b8b533dc4ec\",\"urls\":[\"bzzr://8f483b76debd9f5948c445dcb83dac4c8b4881218776a6cd43ca07bd62f647de\"]},\"openzeppelin-solidity/contracts/token/ERC721/IERC721Metadata.sol\":{\"keccak256\":\"0x2b2b99dc7fe8fcd1f9427d00822b99cbc683dc21f5dd7532bd7e2281fd2c2ca2\",\"urls\":[\"bzzr://b89c69b072072e7fa1c8da973f82c7b28a64fb6bdc1e47626fedc89050ae783c\"]},\"openzeppelin-solidity/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0xadbfb7028fb0f851dc848a48b9e54e7c89ffd2c2edc12fa4ba9bb383dfaa83d9\",\"urls\":[\"bzzr://2466b6491600969dd9ffdeb0b705e7cecc38418aa215cec64b2481273bba9076\"]},\"openzeppelin-solidity/contracts/utils/Address.sol\":{\"keccak256\":\"0xf3358e5819ca73357abd6c90bdfffd0474af54364897f6b3e3234c4b71fbe9a1\",\"urls\":[\"bzzr://f7f6da60a184233fd666ac44e6fb2bd51ca6ebdc4867a310d368049aa4e62786\"]}},\"version\":1}",
@@ -282,28 +242,21 @@
   "source": "pragma solidity ^0.5.0;\n\nimport './CoffeeBatchNFT.sol';\nimport './WrappedCoffeeCoin.sol';\nimport 'openzeppelin-solidity/contracts/token/ERC721/ERC721Holder.sol';\n\ncontract CoffeeTokenHandler is Ownable, ERC721Holder{\n\n    address public ERC20TokenContract;\n    address public NFTTokenContractAddress;\n    mapping (uint256 => uint256) public coffeeBatches;\n\n\n    mapping(address => bool) public isCooperative;\n    modifier onlyCooperative(){\n        require(isCooperative[msg.sender], \"user must be a cooperative\");\n        _;\n    }\n\n    constructor(address _NFTTokenContractAddress) Ownable() public{\n        NFTTokenContractAddress = _NFTTokenContractAddress;\n    }\n\n    function setNFTTokenContractAddress(address _NFTTokenContractAddress) public onlyOwner {\n        NFTTokenContractAddress = _NFTTokenContractAddress;\n    }\n\n    function setERC20TokenContract(address _ERC20TokenContract) public onlyOwner {\n        ERC20TokenContract = _ERC20TokenContract;\n    }\n\n    function addCooperative(address cooperative) public onlyOwner{\n        isCooperative[cooperative] = true;\n    }\n\n    function removeCooperative(address cooperative) public onlyOwner {\n        isCooperative[cooperative] = false;\n    }\n\n    function wrapCoffee(address _from, uint256 _tokenId) public onlyCooperative(){\n       CoffeeBatchNFT(NFTTokenContractAddress).transferFrom(_from, address(this), _tokenId);\n       uint256 size = CoffeeBatchNFT(NFTTokenContractAddress).coffeeBatchSize(_tokenId);\n       WrappedCoffeeCoin(ERC20TokenContract).wrapCoffee(_from, size);\n    }\n\n    function unwrapCoffee(address _from, uint256 _tokenId, uint256 _amount) public onlyCooperative(){\n       uint256 size = CoffeeBatchNFT(NFTTokenContractAddress).coffeeBatchSize(_tokenId);\n       require(size == _amount, \"burned tokens must equal to the coffee wanted\");\n       WrappedCoffeeCoin(ERC20TokenContract).transferFrom(_from, address(this), _amount);\n       CoffeeBatchNFT(NFTTokenContractAddress).transferFrom(address(this),_from, _tokenId);\n       WrappedCoffeeCoin(ERC20TokenContract).unwrapCoffee(_from, _amount);\n    }\n}\n",
   "sourcePath": "/home/crisgarner/projects/hackathons/wrapped-coffee-coin/contracts/CoffeeTokenHandler.sol",
   "ast": {
-    "absolutePath": "/home/crisgarner/projects/hackathons/wrapped-coffee-coin/contracts/CoffeeTokenHandler.sol",
+    "absolutePath": "/home/isaacmtz90/Documents/hackMunon/wrapped-coffee-coin/contracts/CoffeeTokenHandler.sol",
     "exportedSymbols": {
-      "CoffeeTokenHandler": [
-        343
-      ]
+      "CoffeeTokenHandler": [343]
     },
     "id": 344,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 151,
-        "literals": [
-          "solidity",
-          "^",
-          "0.5",
-          ".0"
-        ],
+        "literals": ["solidity", "^", "0.5", ".0"],
         "nodeType": "PragmaDirective",
         "src": "0:23:1"
       },
       {
-        "absolutePath": "/home/crisgarner/projects/hackathons/wrapped-coffee-coin/contracts/CoffeeBatchNFT.sol",
+        "absolutePath": "/home/isaacmtz90/Documents/hackMunon/wrapped-coffee-coin/contracts/CoffeeBatchNFT.sol",
         "file": "./CoffeeBatchNFT.sol",
         "id": 152,
         "nodeType": "ImportDirective",
@@ -314,7 +267,7 @@
         "unitAlias": ""
       },
       {
-        "absolutePath": "/home/crisgarner/projects/hackathons/wrapped-coffee-coin/contracts/WrappedCoffeeCoin.sol",
+        "absolutePath": "/home/isaacmtz90/Documents/hackMunon/wrapped-coffee-coin/contracts/WrappedCoffeeCoin.sol",
         "file": "./WrappedCoffeeCoin.sol",
         "id": 153,
         "nodeType": "ImportDirective",
@@ -374,21 +327,12 @@
             "src": "203:12:1"
           }
         ],
-        "contractDependencies": [
-          1013,
-          2515,
-          2841
-        ],
+        "contractDependencies": [1013, 2515, 2841],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 343,
-        "linearizedBaseContracts": [
-          343,
-          2515,
-          2841,
-          1013
-        ],
+        "linearizedBaseContracts": [343, 2515, 2841, 1013],
         "name": "CoffeeTokenHandler",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -635,10 +579,7 @@
                       "id": 172,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2878,
-                        2879
-                      ],
+                      "overloadedDeclarations": [2878, 2879],
                       "referencedDeclaration": 2879,
                       "src": "449:7:1",
                       "typeDescriptions": {
@@ -800,7 +741,7 @@
               "src": "548:34:1"
             },
             "returnParameters": {
-              "id": 188,
+              "id": 186,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "599:0:1"
@@ -1568,9 +1509,7 @@
                   "src": "1297:84:1"
                 },
                 {
-                  "assignments": [
-                    267
-                  ],
+                  "assignments": [267],
                   "declarations": [
                     {
                       "constant": false,
@@ -1935,9 +1874,7 @@
               "src": "1649:435:1",
               "statements": [
                 {
-                  "assignments": [
-                    296
-                  ],
+                  "assignments": [296],
                   "declarations": [
                     {
                       "constant": false,
@@ -2153,10 +2090,7 @@
                       "id": 304,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2878,
-                        2879
-                      ],
+                      "overloadedDeclarations": [2878, 2879],
                       "referencedDeclaration": 2879,
                       "src": "1747:7:1",
                       "typeDescriptions": {
@@ -2798,21 +2732,14 @@
   "legacyAST": {
     "absolutePath": "/home/crisgarner/projects/hackathons/wrapped-coffee-coin/contracts/CoffeeTokenHandler.sol",
     "exportedSymbols": {
-      "CoffeeTokenHandler": [
-        343
-      ]
+      "CoffeeTokenHandler": [343]
     },
     "id": 344,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 151,
-        "literals": [
-          "solidity",
-          "^",
-          "0.5",
-          ".0"
-        ],
+        "literals": ["solidity", "^", "0.5", ".0"],
         "nodeType": "PragmaDirective",
         "src": "0:23:1"
       },
@@ -2888,21 +2815,12 @@
             "src": "203:12:1"
           }
         ],
-        "contractDependencies": [
-          1013,
-          2515,
-          2841
-        ],
+        "contractDependencies": [1013, 2515, 2841],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 343,
-        "linearizedBaseContracts": [
-          343,
-          2515,
-          2841,
-          1013
-        ],
+        "linearizedBaseContracts": [343, 2515, 2841, 1013],
         "name": "CoffeeTokenHandler",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -3149,10 +3067,7 @@
                       "id": 172,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2878,
-                        2879
-                      ],
+                      "overloadedDeclarations": [2878, 2879],
                       "referencedDeclaration": 2879,
                       "src": "449:7:1",
                       "typeDescriptions": {
@@ -3886,7 +3801,7 @@
               "src": "1115:21:1"
             },
             "returnParameters": {
-              "id": 238,
+              "id": 186,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1154:0:1"
@@ -4082,9 +3997,7 @@
                   "src": "1297:84:1"
                 },
                 {
-                  "assignments": [
-                    267
-                  ],
+                  "assignments": [267],
                   "declarations": [
                     {
                       "constant": false,
@@ -4449,9 +4362,7 @@
               "src": "1649:435:1",
               "statements": [
                 {
-                  "assignments": [
-                    296
-                  ],
+                  "assignments": [296],
                   "declarations": [
                     {
                       "constant": false,
@@ -4667,10 +4578,7 @@
                       "id": 304,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2878,
-                        2879
-                      ],
+                      "overloadedDeclarations": [2878, 2879],
                       "referencedDeclaration": 2879,
                       "src": "1747:7:1",
                       "typeDescriptions": {
