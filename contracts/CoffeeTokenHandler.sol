@@ -17,7 +17,9 @@ contract CoffeeTokenHandler is Ownable, ERC721Holder{
         _;
     }
 
-    constructor() Ownable() public{}
+    constructor(address _NFTTokenContractAddress) Ownable() public{
+        NFTTokenContractAddress = _NFTTokenContractAddress;
+    }
 
     function setNFTTokenContractAddress(address _NFTTokenContractAddress) public onlyOwner {
         NFTTokenContractAddress = _NFTTokenContractAddress;
@@ -35,7 +37,17 @@ contract CoffeeTokenHandler is Ownable, ERC721Holder{
         isCooperative[cooperative] = false;
     }
 
-    // function wrapCoffee(address _from, uint256 _tokenId) public onlyCooperative(){
-    //     NFTTokenContractAddress.transferFrom(_from, this, _tokenId);
-    // }
+    function wrapCoffee(address _from, uint256 _tokenId) public onlyCooperative(){
+       CoffeeBatchNFT(NFTTokenContractAddress).transferFrom(_from, address(this), _tokenId);
+       uint256 size = CoffeeBatchNFT(NFTTokenContractAddress).coffeeBatchSize(_tokenId);
+       WrappedCoffeeCoin(ERC20TokenContract).wrapCoffee(_from, size);
+    }
+
+    function unwrapCoffee(address _from, uint256 _tokenId, uint256 _amount) public onlyCooperative(){
+       uint256 size = CoffeeBatchNFT(NFTTokenContractAddress).coffeeBatchSize(_tokenId);
+       require(size == _amount, "burned tokens must equal to the coffee wanted");
+       WrappedCoffeeCoin(ERC20TokenContract).transferFrom(_from, address(this), _amount);
+       CoffeeBatchNFT(NFTTokenContractAddress).transferFrom(address(this),_from, _tokenId);
+       WrappedCoffeeCoin(ERC20TokenContract).unwrapCoffee(_from, _amount);
+    }
 }
