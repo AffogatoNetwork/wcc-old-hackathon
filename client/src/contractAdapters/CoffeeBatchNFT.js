@@ -101,13 +101,12 @@ const OwnedTokens = (props) => (
       <th>Producer</th>
       <th>Amount</th>
       <th>Description</th>
-      <th>{props.items.length}</th>
     </tr>
   </thead>
   <tbody>
     {
       props.items.map((item, idx) =>
-        (<tr key="item-${item.address}">
+        (<tr key={idx}>
           <th scope="row" >{idx}</th>
           <td>{item.producer}</td>
           <td>{item.amount}</td>
