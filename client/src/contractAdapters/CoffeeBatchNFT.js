@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import CoffeeBatchNFT from "../contracts/CoffeeBatchNFT.json";
-import WrappedCoffeeCoin from "../contracts/WrappedCoffeeCoin.json";
+import CoffeeTokenHandler from "../contracts/CoffeeTokenHandler.json";
 import { Container, Row, Col, Table } from "reactstrap";
 import AddCoffeeBatchForm from "../components/AddCoffeeBatchForm";
 import AddCooperativeForm from "../components/AddCooperativeForm";
@@ -30,10 +30,10 @@ class CoffeeBatchNFTAdapter extends Component {
         CoffeeBatchNFT.abi,
         deployedNetwork && deployedNetwork.address
       );
-      const wrapperNetwork = WrappedCoffeeCoin.networks[networkId];
+      const tokenHandlerNetwork = CoffeeTokenHandler.networks[networkId];
       const wrapped_TokenHandler = new web3.eth.Contract(
-        WrappedCoffeeCoin.abi,
-        wrapperNetwork && wrapperNetwork.address
+        CoffeeTokenHandler.abi,
+        tokenHandlerNetwork && tokenHandlerNetwork.address
       );
 
       this.setState({
