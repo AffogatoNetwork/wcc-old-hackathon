@@ -1,5 +1,7 @@
-1. Set on Coffee Token Handler el address del WrappedCoffeeCoin contract
-2. Crear NFT
+Pasos:
+
+1. Set on Coffee Token Handler el address del WrappedCoffeeCoin contract - Done
+2. Crear NFT - Done
 3. add cooperative to Token Handler
    function addCooperative(address cooperative) public onlyOwner{
    --- mint WrappedCoffeeCoin---

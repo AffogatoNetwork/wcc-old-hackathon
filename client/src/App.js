@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import getWeb3 from "./utils/getWeb3";
-import CoffeeBatchNFT from "./contractAdapters/CoffeeBatchNFT"
+import CoffeeBatchNFT from "./contractAdapters/CoffeeBatchNFT";
+import CoffeeTokenHandler from "./contractAdapters/CoffeeTokenHandler";
 
 import "./App.css";
 
 class App extends Component {
-  state = { allTokens: 0, storageValue: 0, web3: null, accounts: null, contract: null };
+  state = {
+    allTokens: 0,
+    storageValue: 0,
+    web3: null,
+    accounts: null,
+    contract: null
+  };
   componentDidMount = async () => {
     try {
       // Get network provider and web3 instance.
@@ -26,19 +33,25 @@ class App extends Component {
       console.error(error);
     }
   };
-  
+
   render() {
     if (!this.state.web3 || !this.state.accounts) {
       return <div>Loading Web3, accounts, and contract...</div>;
-    }else{
+    } else {
       return (
         <div className="App">
           <h1>Wrapped Coffee coins</h1>
-          <CoffeeBatchNFT web3= {this.state.web3} accounts= {this.state.accounts}/>
+          <CoffeeBatchNFT
+            web3={this.state.web3}
+            accounts={this.state.accounts}
+          />
+          <CoffeeTokenHandler
+            web3={this.state.web3}
+            accounts={this.state.accounts}
+          />
         </div>
       );
     }
-    
   }
 }
 

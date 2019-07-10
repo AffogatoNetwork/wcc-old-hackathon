@@ -6,7 +6,7 @@ function Inputform(props) {
   const submitFn = props.onSubmitFn;
   return (
     <div>
-      <h1>Add coffee batch:</h1>
+      <h1>Add Coffee Batch:</h1>
       <Container style={{ paddingTop: "5px" }}>
         <Formik
           initialValues={{
@@ -42,25 +42,25 @@ function Inputform(props) {
                 name="producer"
                 placeholder=" Producer Name"
                 component={ReactstrapInput}
-              />              
+              />
               <Field
                 type="text"
                 name="address"
                 placeholder="Producer Address"
                 component={ReactstrapInput}
-              />              
+              />
               <Field
                 type="number"
                 name="amount"
                 placeholder="Amount"
                 component={ReactstrapInput}
-              />             
+              />
               <Field
                 type="text"
                 name="description"
                 placeholder="Coffee Description"
                 component={ReactstrapInput}
-              />             
+              />
               <Button type="submit" color="primary" disabled={isSubmitting}>
                 Submit
               </Button>
