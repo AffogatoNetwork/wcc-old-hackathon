@@ -3,32 +3,25 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Container, Button } from "reactstrap";
 import { ReactstrapInput } from "reactstrap-formik";
 
+
 function Inputform(props) {
   const submitFn = props.onSubmitFn;
   return (
     <div>
-      <h1>Add Coffee Batch:</h1>
+      <h2>Wrap Coffee Token:</h2>
       <Container style={{ paddingTop: "5px" }}>
         <Formik
           initialValues={{
-            producer: "",
             address: "",
-            amount: 0,
-            description: ""
+            tokenId: 0,
           }}
           validate={values => {
             let errors = {};
             if (!values.address) {
               errors.address = "Required";
             }
-            if (!values.producer) {
-              errors.producer = "Required";
-            }
-            if (!values.description) {
-              errors.description = "Required";
-            }
-            if (!parseInt(values.amount) || parseInt(values.amount) <= 0) {
-              errors.amunt = "Must be a positive value";
+            if (!parseInt(values.tokenId) || parseInt(values.tokenId) < 0) {
+              errors.tokenId = "Must be a positive value";
             }
             return errors;
           }}
@@ -40,30 +33,18 @@ function Inputform(props) {
             <Form>
               <Field
                 type="text"
-                name="producer"
-                placeholder=" Producer Name"
-                component={ReactstrapInput}
-              />
-              <Field
-                type="text"
                 name="address"
                 placeholder="Producer Address"
                 component={ReactstrapInput}
               />
               <Field
                 type="number"
-                name="amount"
-                placeholder="Amount"
-                component={ReactstrapInput}
-              />
-              <Field
-                type="text"
-                name="description"
-                placeholder="Coffee Description"
+                name="tokenId"
+                placeholder="Token Id"
                 component={ReactstrapInput}
               />
               <Button type="submit" color="primary" disabled={isSubmitting}>
-                Submit
+                Wrap Coffee Token
               </Button>
             </Form>
           )}
@@ -73,8 +54,8 @@ function Inputform(props) {
   );
 }
 
-function AddCoffeeBatchForm(props) {
-  return <Inputform onSubmitFn={props.onCoffeeBatchAdd} />;
+function WrapCoffeeForm(props) {
+  return <Inputform onSubmitFn={props.onWrapCoffee} />;
 }
 
-export default AddCoffeeBatchForm;
+export default WrapCoffeeForm;

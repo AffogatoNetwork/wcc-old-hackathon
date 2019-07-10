@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import getWeb3 from "./utils/getWeb3";
 import CoffeeBatchNFT from "./contractAdapters/CoffeeBatchNFT";
 import CoffeeTokenHandler from "./contractAdapters/CoffeeTokenHandler";
+import Cooperative from "./contractAdapters/Cooperative";
+import { Route } from "react-router-dom";
+import { withRouter } from "react-router";
+import { ThemeProvider } from "rimble-ui";
+import { ToastMessage } from "rimble-ui";
+import Header from "./components/Header";
 
 import "./App.css";
 
@@ -13,6 +19,7 @@ class App extends Component {
     accounts: null,
     contract: null
   };
+
   componentDidMount = async () => {
     try {
       // Get network provider and web3 instance.
@@ -40,15 +47,39 @@ class App extends Component {
     } else {
       return (
         <div className="App">
-          <h1>Wrapped Coffee coins</h1>
-          <CoffeeBatchNFT
-            web3={this.state.web3}
-            accounts={this.state.accounts}
-          />
-          <CoffeeTokenHandler
-            web3={this.state.web3}
-            accounts={this.state.accounts}
-          />
+            <h1>Wrapped Coffee coins</h1>
+            <Header />
+
+            <Route
+                exact
+                path="/"
+                render={() => (
+                  <CoffeeTokenHandler
+                    web3={this.state.web3}
+                    accounts={this.state.accounts}
+                  />
+                )}
+            />
+            <Route
+                exact
+                path="/coffeeBatches/"
+                render={() => (
+                  <CoffeeBatchNFT
+                    web3={this.state.web3}
+                    accounts={this.state.accounts}
+                  />
+                )}
+            />
+            <Route
+                exact
+                path="/cooperatives/"
+                render={() => (
+                  <Cooperative
+                    web3={this.state.web3}
+                    accounts={this.state.accounts}
+                  />
+                )}
+            />
         </div>
       );
     }

@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import CoffeeBatchNFT from "../contracts/CoffeeBatchNFT.json";
+import WrappedCoffeeCoin from "../contracts/WrappedCoffeeCoin.json";
 import { Container, Row, Col, Table } from "reactstrap";
 import AddCoffeeBatchForm from "../components/AddCoffeeBatchForm";
+import AddCooperativeForm from "../components/AddCooperativeForm";
+import ApproveForm from "../components/ApproveForm";
+
+
 class CoffeeBatchNFTAdapter extends Component {
   constructor(props) {
     super(props);
@@ -9,10 +14,12 @@ class CoffeeBatchNFTAdapter extends Component {
       web3: props.web3,
       accounts: props.accounts,
       contract: null,
+      wrappedTokenHandlerAddress: "",
       coffeeStorage: [],
       ownedTokens: null
     };
   }
+
   componentDidMount = async () => {
     try {
       const { web3 } = this.state;
@@ -23,9 +30,15 @@ class CoffeeBatchNFTAdapter extends Component {
         CoffeeBatchNFT.abi,
         deployedNetwork && deployedNetwork.address
       );
+      const wrapperNetwork = WrappedCoffeeCoin.networks[networkId];
+      const wrapped_TokenHandler = new web3.eth.Contract(
+        WrappedCoffeeCoin.abi,
+        wrapperNetwork && wrapperNetwork.address
+      );
 
       this.setState({
-        contract: contract_CoffeeBatch
+        contract: contract_CoffeeBatch,
+        wrappedTokenHandlerAddress: wrapped_TokenHandler._address
       });
       await this.tokensOfOwner(this.state.accounts[0]);
     } catch (error) {
@@ -47,10 +60,8 @@ class CoffeeBatchNFTAdapter extends Component {
       .send({from: this.state.accounts[0]});
     this.setState({ coffeeStorage: coffeeStorage.push(coffeeBatchPayload) });
   };
-    
 
   tokensOfOwner = async address => {
-    
     const { contract, coffeeStorage } = this.state;    
     const response = await contract.methods.tokensOfOwner(address).call();
     if (response) {
@@ -68,10 +79,22 @@ class CoffeeBatchNFTAdapter extends Component {
       this.setState({ ownedTokens: [] });
     }    
   };
-     
+
+  approveToken = async approvePayload => {
+    const { contract } = this.state;
+    const response = await contract.methods
+      .approve(
+        this.state.wrappedTokenHandlerAddress,
+        parseInt(approvePayload.tokenId)
+      )
+      .send({from: this.state.accounts[0]});
+
+  };
 
   render() {
     console.log("TCL: CoffeeBatchNFTAdapter -> render -> this.state.ownedTokens", this.state.ownedTokens)
+    const handlerAddres = this.state.wrappedTokenHandlerAddress;
+
     return (
       <Container>
         <Row>
@@ -81,12 +104,16 @@ class CoffeeBatchNFTAdapter extends Component {
         </Row>
         <Row>
           {this.state.ownedTokens ? (
-          
             <div>
               <h3>Owned Tokens:</h3>
               <OwnedTokens items={this.state.ownedTokens}></OwnedTokens>
             </div>
           ) : null}
+        </Row>
+        <Row>
+          <Col>
+            <ApproveForm onApprove={this.approveToken} handlerAddress={handlerAddres} />
+          </Col>
         </Row>
       </Container>
     );

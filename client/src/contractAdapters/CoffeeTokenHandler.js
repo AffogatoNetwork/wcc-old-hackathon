@@ -3,6 +3,7 @@ import CoffeeTokenHandlerContract from "../contracts/CoffeeTokenHandler.json";
 import WrappedCoffeeCoin from "../contracts/WrappedCoffeeCoin.json";
 import { Container, Row, Col, Table } from "reactstrap";
 import AdminForm from "../components/AdminForm";
+
 class CoffeeTokenHandler extends Component {
   constructor(props) {
     super(props);
@@ -15,6 +16,7 @@ class CoffeeTokenHandler extends Component {
       wrappedContractAddress: ""
     };
   }
+
   componentDidMount = async () => {
     try {
       const { web3 } = this.state;
