@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import CoffeeBatchNFT from "../contracts/CoffeeBatchNFT.json";
 import CoffeeTokenHandler from "../contracts/CoffeeTokenHandler.json";
+import WrappedCoffeeCoin from "../contracts/WrappedCoffeeCoin.json";
 import { Container, Row, Col, Table } from "reactstrap";
 import AddCoffeeBatchForm from "../components/AddCoffeeBatchForm";
 import AddCooperativeForm from "../components/AddCooperativeForm";
 import ApproveForm from "../components/ApproveForm";
+import UnwrapApproveForm from "../components/UnwrapApproveForm";
 
 
 class CoffeeBatchNFTAdapter extends Component {
@@ -14,7 +16,9 @@ class CoffeeBatchNFTAdapter extends Component {
       web3: props.web3,
       accounts: props.accounts,
       contract: null,
+      coinContract: null,
       wrappedTokenHandlerAddress: "",
+      coinAddress: "",
       coffeeStorage: [],
       ownedTokens: null
     };
@@ -35,9 +39,16 @@ class CoffeeBatchNFTAdapter extends Component {
         CoffeeTokenHandler.abi,
         tokenHandlerNetwork && tokenHandlerNetwork.address
       );
+      const coinNetwork = WrappedCoffeeCoin.networks[networkId];
+      const coinContract = new web3.eth.Contract(
+        WrappedCoffeeCoin.abi,
+        coinNetwork && coinNetwork.address
+      );
 
       this.setState({
         contract: contract_CoffeeBatch,
+        coinContract: coinContract,
+        coinAddress: coinContract._address,
         wrappedTokenHandlerAddress: wrapped_TokenHandler._address
       });
       await this.tokensOfOwner(this.state.accounts[0]);
@@ -88,12 +99,23 @@ class CoffeeBatchNFTAdapter extends Component {
         parseInt(approvePayload.tokenId)
       )
       .send({from: this.state.accounts[0]});
+  };
 
+  unwrapApproveToken = async approvePayload => {
+    const { coinContract } = this.state;
+
+    const response = await coinContract.methods
+      .approve(
+        this.state.wrappedTokenHandlerAddress,
+        parseInt(approvePayload.amount)
+      )
+      .send({from: this.state.accounts[0]});
   };
 
   render() {
     console.log("TCL: CoffeeBatchNFTAdapter -> render -> this.state.ownedTokens", this.state.ownedTokens)
-    const handlerAddres = this.state.wrappedTokenHandlerAddress;
+    const handlerAddress = this.state.wrappedTokenHandlerAddress;
+    const coindAddress = this.state.coinAddress;
 
     return (
       <Container>
@@ -112,7 +134,12 @@ class CoffeeBatchNFTAdapter extends Component {
         </Row>
         <Row>
           <Col>
-            <ApproveForm onApprove={this.approveToken} handlerAddress={handlerAddres} />
+            <ApproveForm onApprove={this.approveToken} handlerAddress={handlerAddress} />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <UnwrapApproveForm onApprove={this.unwrapApproveToken} handlerAddress={handlerAddress} />
           </Col>
         </Row>
       </Container>

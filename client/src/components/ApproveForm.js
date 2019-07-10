@@ -8,7 +8,7 @@ function Inputform(props) {
   const handlerAddress = props.handlerAddress;
   return (
     <div>
-      <h1>Approve Token:</h1>
+      <h1>Wrap Approve:</h1>
       <h4>Coffee token Handler: {handlerAddress} </h4>
       <Container style={{ paddingTop: "5px" }}>
         <Formik

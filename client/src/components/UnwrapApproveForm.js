@@ -3,24 +3,21 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Container, Button } from "reactstrap";
 import { ReactstrapInput } from "reactstrap-formik";
 
-
 function Inputform(props) {
   const submitFn = props.onSubmitFn;
+  const handlerAddress = props.handlerAddress;
   return (
     <div>
-      <h2>Wrap Coffee Token:</h2>
+      <h1>Unwarp Approve:</h1>
+      <h4>Coffee token Handler: {handlerAddress} </h4>
       <Container style={{ paddingTop: "5px" }}>
         <Formik
           initialValues={{
-            address: "",
-            tokenId: "",
+            amount: "",
           }}
           validate={values => {
             let errors = {};
-            if (!values.address) {
-              errors.address = "Required";
-            }
-            if (!parseInt(values.tokenId) || parseInt(values.tokenId) < 0) {
+            if (!parseInt(values.amount) || parseInt(values.amount) <= 0) {
               errors.tokenId = "Must be a positive value";
             }
             return errors;
@@ -32,19 +29,13 @@ function Inputform(props) {
           {({ isSubmitting }) => (
             <Form>
               <Field
-                type="text"
-                name="address"
-                placeholder="Producer Address"
-                component={ReactstrapInput}
-              />
-              <Field
                 type="number"
-                name="tokenId"
-                placeholder="Token Id"
+                name="amount"
+                placeholder="Amount"
                 component={ReactstrapInput}
               />
               <Button type="submit" color="primary" disabled={isSubmitting}>
-                Wrap Coffee Token
+                Approve
               </Button>
             </Form>
           )}
@@ -54,8 +45,8 @@ function Inputform(props) {
   );
 }
 
-function WrapCoffeeForm(props) {
-  return <Inputform onSubmitFn={props.onWrapCoffee} />;
+function ApproveForm(props) {
+  return <Inputform onSubmitFn={props.onApprove} handlerAddress={props.handlerAddress} />;
 }
 
-export default WrapCoffeeForm;
+export default ApproveForm;

@@ -10,7 +10,6 @@ contract CoffeeTokenHandler is Ownable, ERC721Holder{
     address public NFTTokenContractAddress;
     mapping (uint256 => uint256) public coffeeBatches;
 
-
     mapping(address => bool) public isCooperative;
     modifier onlyCooperative(){
         require(isCooperative[msg.sender], "user must be a cooperative");
